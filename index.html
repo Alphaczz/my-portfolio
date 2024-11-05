@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="hero_img" id ='home'>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#news">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#home">Home</a></li>
+                  </ul>
+            </div>
+            <div class="hero_text">
+                
+                <h1>Hi, I'm <span class="name">Shivam</span></h1>
+                <p>I'm an <span class="job">Aspiring Developer, Looking for New Challenges!</span></p>
+                
+                <button class="download_resume_btn">
+                    <a href="assest/Resume_Shivam_Pandey.pdf" download="Shivam_Pandey_Resume.pdf" class="btn">Download Resume</a>
+                </button>
+                
+            </div>
+        </div>
+        <br>
+        <div class="experience" id="experience">
+            <h3>Experience</h3>
+            <div class="experience_list">
+                <div class="exp">
+                    <h4>Wharf Street Studios - (Android developer Intern)</h4>
+                    <h3>From December 2023 - April 2024</h3>
+                    <p>• Worked on multiple projects ,build new features solved bugs </p>
+                    <p>• Used Technologies : XML,Kotlin,ROOM db,KMP  </p>
+                    <br>
+                    <h4>Freelance - (Fullstack Php)</h4>
+                    <h3>From September 2024 - November 2024</h3>
+                    <p>• Worked on Test Portal development  </p>
+                    <p>• Build a Test Portal from scratch  </p>
+                    <p>
+                        its has a MSQ and MCQ Test System,Admin Portal to track and Upload questions from spread sheet </p>
+                    <p>
+                        support features , 
+                        result analysis and much more.
+                    </p>
+                     <br>
+                     <!-- <h4>TCS - (Digital)</h4>
+                    <h3>Upcoming Developer</h3>
+                    <p>• Worked on multiple projects ,build new features solved bugs </p>
+                    <p>• Used Technologies : XML,Kotlin,ROOM db,KMP  </p> -->
+                </div>
+            </div>
+
+        </div>
+        <div class="tools" id="about">
+            <h3>Tools</h3>
+            <div class="tools_list">
+                <div class="skills">
+                    <div class="skill">
+                        <img src="./assest/Kotlin.png" alt="android">
+                        <h4>Kotlin</h4>
+                    </div>
+                    <div  class="skill">
+                        <img src="./assest/jetpack compose.png" alt="android">
+                        <h4>Jetpack Compose</h4>
+                    </div>
+                    <div class="skill">
+                        <img src="./assest/xml.png" alt="android">
+                        <h4>XML</h4>
+                    </div>
+                    <div class="skill">
+                        <img src="./assest/java.png" alt="android">
+                        <h4>Java</h4>
+                    </div>
+                    <div class="skill">
+                        <img src="./assest/sql.png" alt="android">
+                        <h4>SQL</h4>
+                    </div>
+                </div>
+        </div>
+        <br>
+        <div class="projects" id="news">
+            <h3>Projects</h3>
+            <div class="project">
+             
+                <div class="project_text">
+                    <h3>Tour Time</h3>
+                    <h4> Kotlin,Google Nearby Api,Firebase</h4>
+                    <p> Tourist app which have maps,transaltors ,nearby places and blogging features</p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project_text">
+                    <h3>PCE Navigator</h3>
+                    <h4>Java,XML,SQLlite</h4>
+                    <p> College Campus Navigation Android Application.</p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project_text">
+                    <h3>Weather App</h3>
+                    <h4> Kotlin,Jetpack Compose,RestApi,Work Manager</h4>
+                    <p> Real-time weather information using weather API. </p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project_text">
+                    <h3>Notes App </h3>
+                    <h4> Kotlin, XML,Room Database </h4>
+                    <p> Streamlined note-taking Android Application. </p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project_text">
+                    <h3>Moovi  </h3>
+                    <h4> Kotlin, XML, REST</h4>
+                    <p>Innovative app showcasing trending movies using TMDB .</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <br>
+</body>
+<footer>
+    <div class="contact" id="contact">
+        <h3 style="width: 100%; text-align: center;">Contact</h3>
+        <div class="contact_list">
+            <div class="contact_item">
+                <h4>Phone: 8879074932</h4>
+            </div>
+            <div class="contact_item">
+                <h4>Email: <a href="mailto:shivam212002@gmail.com">shivam212002@gmail.com</a></h4>
+            </div>
+            <div class="contact_item">
+                <h4>Github: <a href="https://github.com/Alphaczz" target="_blank">Alphaczz</a></h4>
+            </div>
+            <div class="contact_item">
+                <h4>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/shivam212002/?ref=header_profile" target="_blank">shivam212002</a></h4>
+            </div>
+            <div class="contact_item">
+                <h4>LinkedIn: <a href="https://www.linkedin.com/in/shivam-pandey-1450091b4/" target="_blank">shivam-pandey-1450091b4</a></h4>
+            </div>
+        </div>
+    </div>
+    
+    
+</footer>
+<script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const targetId = this.getAttribute('href').substring(1); // Get section ID
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+</html>
