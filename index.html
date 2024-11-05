@@ -3,165 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Shivam Pandey - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="main">
-        <div class="hero_img" id ='home'>
-            <div class="navbar">
+    <main>
+        <nav class="navbar">
+            <div class="nav-container">
                 <ul>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#news">Projects</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#home">Home</a></li>
-                  </ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
             </div>
+        </nav>
+
+        <section id="home" class="hero_img">
             <div class="hero_text">
-                
                 <h1>Hi, I'm <span class="name">Shivam</span></h1>
-                <p>I'm an <span class="job">Aspiring Developer, Looking for New Challenges!</span></p>
-                
-                <button class="download_resume_btn">
-                    <a href="assest/Resume_Shivam_Pandey.pdf" download="Shivam_Pandey_Resume.pdf" class="btn">Download Resume</a>
-                </button>
-                
+                <p class="job">Aspiring Developer, Looking for New Challenges!</p>
+                <div class="cta-buttons">
+                    <a href="assest/Resume_Shivam_Pandey.pdf" class="btn primary-btn" download="Shivam_Pandey_Resume.pdf">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="experience" id="experience">
-            <h3>Experience</h3>
+        </section>
+
+        <section id="experience" class="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="experience_list">
-                <div class="exp">
-                    <h4>Wharf Street Studios - (Android developer Intern)</h4>
-                    <h3>From December 2023 - April 2024</h3>
-                    <p>• Worked on multiple projects ,build new features solved bugs </p>
-                    <p>• Used Technologies : XML,Kotlin,ROOM db,KMP  </p>
-                    <br>
-                    <h4>Freelance - (Fullstack Php)</h4>
-                    <h3>From September 2024 - November 2024</h3>
-                    <p>• Worked on Test Portal development  </p>
-                    <p>• Build a Test Portal from scratch  </p>
-                    <p>
-                        its has a MSQ and MCQ Test System,Admin Portal to track and Upload questions from spread sheet </p>
-                    <p>
-                        support features , 
-                        result analysis and much more.
-                    </p>
-                     <br>
-                     <!-- <h4>TCS - (Digital)</h4>
-                    <h3>Upcoming Developer</h3>
-                    <p>• Worked on multiple projects ,build new features solved bugs </p>
-                    <p>• Used Technologies : XML,Kotlin,ROOM db,KMP  </p> -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h3>Android Developer Intern</h3>
+                        <span class="company">Wharf Street Studios</span>
+                    </div>
+                    <div class="exp-duration">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>December 2023 - April 2024</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Worked on multiple projects, built new features and solved bugs</li>
+                        <li>Technologies: XML, Kotlin, ROOM db, KMP</li>
+                    </ul>
                 </div>
-            </div>
 
-        </div>
-        <div class="tools" id="about">
-            <h3>Tools</h3>
-            <div class="tools_list">
-                <div class="skills">
-                    <div class="skill">
-                        <img src="./assest/Kotlin.png" alt="android">
-                        <h4>Kotlin</h4>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h3>Fullstack PHP Developer</h3>
+                        <span class="company">Freelance</span>
                     </div>
-                    <div  class="skill">
-                        <img src="./assest/jetpack compose.png" alt="android">
-                        <h4>Jetpack Compose</h4>
+                    <div class="exp-duration">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>September 2024 - November 2024</span>
                     </div>
-                    <div class="skill">
-                        <img src="./assest/xml.png" alt="android">
-                        <h4>XML</h4>
-                    </div>
-                    <div class="skill">
-                        <img src="./assest/java.png" alt="android">
-                        <h4>Java</h4>
-                    </div>
-                    <div class="skill">
-                        <img src="./assest/sql.png" alt="android">
-                        <h4>SQL</h4>
-                    </div>
-                </div>
-        </div>
-        <br>
-        <div class="projects" id="news">
-            <h3>Projects</h3>
-            <div class="project">
-             
-                <div class="project_text">
-                    <h3>Tour Time</h3>
-                    <h4> Kotlin,Google Nearby Api,Firebase</h4>
-                    <p> Tourist app which have maps,transaltors ,nearby places and blogging features</p>
+                    <ul class="exp-details">
+                        <li>Built a Test Portal from scratch with MSQ and MCQ systems</li>
+                        <li>Developed admin portal for question management and result analysis</li>
+                    </ul>
                 </div>
             </div>
-            <div class="project">
-                <div class="project_text">
-                    <h3>PCE Navigator</h3>
-                    <h4>Java,XML,SQLlite</h4>
-                    <p> College Campus Navigation Android Application.</p>
+        </section>
+
+        <section id="about" class="tools">
+            <div class="section-header">
+                <h2>Skills & Tools</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills">
+                <div class="skill">
+                    <img src="./assest/Kotlin.png" alt="Kotlin" loading="lazy">
+                    <h4>Kotlin</h4>
+                    <div class="skill-level">Advanced</div>
+                </div>
+                <div class="skill">
+                    <img src="./assest/jetpack%20compose.png" alt="Jetpack Compose" loading="lazy">
+                    <h4>Jetpack Compose</h4>
+                    <div class="skill-level">Intermediate</div>
+                </div>
+                <div class="skill">
+                    <img src="./assest/xml.png" alt="XML" loading="lazy">
+                    <h4>XML</h4>
+                    <div class="skill-level">Advanced</div>
+                </div>
+                <div class="skill">
+                    <img src="./assest/java.png" alt="Java" loading="lazy">
+                    <h4>Java</h4>
+                    <div class="skill-level">Advanced</div>
+                </div>
+                <div class="skill">
+                    <img src="./assest/sql.png" alt="SQL" loading="lazy">
+                    <h4>SQL</h4>
+                    <div class="skill-level">Intermediate</div>
                 </div>
             </div>
-            <div class="project">
-                <div class="project_text">
-                    <h3>Weather App</h3>
-                    <h4> Kotlin,Jetpack Compose,RestApi,Work Manager</h4>
-                    <p> Real-time weather information using weather API. </p>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project">
+                    <div class="project_text">
+                        <h3>Tour Time</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Google Nearby API</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <p>Tourist app with maps, translators, nearby places and blogging features</p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project_text">
+                        <h3>PCE Navigator</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                        <p>College Campus Navigation Android Application</p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project_text">
+                        <h3>Weather App</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <p>Real-time weather information using weather API</p>
+                    </div>
                 </div>
             </div>
-            <div class="project">
-                <div class="project_text">
-                    <h3>Notes App </h3>
-                    <h4> Kotlin, XML,Room Database </h4>
-                    <p> Streamlined note-taking Android Application. </p>
-                </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="project">
-                <div class="project_text">
-                    <h3>Moovi  </h3>
-                    <h4> Kotlin, XML, REST</h4>
-                    <p>Innovative app showcasing trending movies using TMDB .</p>
-                </div>
+            <div class="contact_list">
+                <a href="tel:8879074932" class="contact_item">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p>8879074932</p>
+                </a>
+                <a href="mailto:shivam212002@gmail.com" class="contact_item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>shivam212002@gmail.com</p>
+                </a>
+                <a href="https://github.com/Alphaczz" target="_blank" class="contact_item">
+                    <i class="fab fa-github"></i>
+                    <h4>Github</h4>
+                    <p>Alphaczz</p>
+                </a>
+                <a href="https://www.linkedin.com/in/shivam-pandey-1450091b4/" target="_blank" class="contact_item">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <p>shivam-pandey</p>
+                </a>
             </div>
-        </div>
-        
-    </div>
-    <br>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Shivam Pandey. All rights reserved.</p>
+    </footer>
 </body>
-<footer>
-    <div class="contact" id="contact">
-        <h3 style="width: 100%; text-align: center;">Contact</h3>
-        <div class="contact_list">
-            <div class="contact_item">
-                <h4>Phone: 8879074932</h4>
-            </div>
-            <div class="contact_item">
-                <h4>Email: <a href="mailto:shivam212002@gmail.com">shivam212002@gmail.com</a></h4>
-            </div>
-            <div class="contact_item">
-                <h4>Github: <a href="https://github.com/Alphaczz" target="_blank">Alphaczz</a></h4>
-            </div>
-            <div class="contact_item">
-                <h4>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/shivam212002/?ref=header_profile" target="_blank">shivam212002</a></h4>
-            </div>
-            <div class="contact_item">
-                <h4>LinkedIn: <a href="https://www.linkedin.com/in/shivam-pandey-1450091b4/" target="_blank">shivam-pandey-1450091b4</a></h4>
-            </div>
-        </div>
-    </div>
-    
-    
-</footer>
-<script>
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            const targetId = this.getAttribute('href').substring(1); // Get section ID
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-</script>
 </html>
