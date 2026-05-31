@@ -99,6 +99,10 @@ nav.scrolled {
   align-items: center;
   padding: 120px 48px 80px;
   position: relative;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 .hero-grid {
@@ -195,33 +199,65 @@ nav.scrolled {
 
 .btn-outline:hover { border-color: var(--text); }
 
-/* Hero right — code block */
-.hero-code {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 32px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  line-height: 1.8;
+/* Hero right — floating tech badges */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
-  animation: fadeLeft 0.7s 0.5s forwards;
-  position: relative;
+  animation: fadeLeft 0.8s 0.5s forwards;
 }
 
-.hero-code::before {
-  content: '● ● ●';
-  display: block;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
+.hero-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 380px;
 }
 
-.code-key { color: var(--accent2); }
-.code-str { color: var(--accent); }
-.code-num { color: #f0a060; }
-.code-comment { color: #555; font-style: italic; }
-.code-bracket { color: #888; }
+.hbadge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  color: #666;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+  padding: 8px 16px;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+  animation: floatIn 0.5s both;
+}
+
+.hbadge:nth-child(1)  { animation-delay: 0.55s; }
+.hbadge:nth-child(2)  { animation-delay: 0.62s; }
+.hbadge:nth-child(3)  { animation-delay: 0.69s; }
+.hbadge:nth-child(4)  { animation-delay: 0.76s; }
+.hbadge:nth-child(5)  { animation-delay: 0.83s; }
+.hbadge:nth-child(6)  { animation-delay: 0.90s; }
+.hbadge:nth-child(7)  { animation-delay: 0.97s; }
+.hbadge:nth-child(8)  { animation-delay: 1.04s; }
+.hbadge:nth-child(9)  { animation-delay: 1.11s; }
+.hbadge:nth-child(10) { animation-delay: 1.18s; }
+.hbadge:nth-child(11) { animation-delay: 1.25s; }
+.hbadge:nth-child(12) { animation-delay: 1.32s; }
+
+.hbadge--accent {
+  color: var(--accent);
+  border-color: rgba(200,240,96,0.2);
+  background: rgba(200,240,96,0.05);
+}
+
+.hbadge--lg { font-size: 12px; padding: 10px 20px; }
+
+.hbadge:hover {
+  color: var(--text);
+  border-color: rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 /* Stats strip */
 .stats-strip {
@@ -599,10 +635,92 @@ footer p {
   transform: translateY(0);
 }
 
+/* ── CURSOR GLOW ── */
+.cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,240,96,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: left 0.12s ease, top 0.12s ease;
+}
+
+/* ── HERO GRID BG ── */
+#hero {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center center;
+}
+
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #333; }
+::-webkit-scrollbar-thumb { background: #222; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* ── SELECTION ── */
+::selection { background: rgba(200,240,96,0.25); color: #fff; }
+
+/* ── PROJECT CARD IMPROVEMENTS ── */
+.project-card .proj-bullets {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.project-card .proj-bullets li {
+  font-size: 12.5px;
+  color: #666;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.6;
+}
+.project-card .proj-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: rgba(200,240,96,0.4);
+  font-size: 10px;
+  top: 3px;
+}
+
+/* ── ABOUT STRIP ── */
+.about-strip {
+  padding: 64px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  align-items: start;
+  border-top: 1px solid var(--border);
+}
+.about-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 4px;
+}
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #777;
+  font-weight: 300;
+}
+.about-text strong { color: var(--text); font-weight: 400; }
+
+@media (max-width: 768px) {
+  .about-strip { grid-template-columns: 1fr; gap: 16px; padding: 48px 20px; }
+  .cursor-glow { display: none; }
+}
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
@@ -610,7 +728,7 @@ footer p {
   .nav-links { display: none; }
   #hero { padding: 100px 20px 60px; }
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero-code { display: none; }
+  .hero-right { display: none; }
   .stats-strip { padding: 24px 20px; flex-wrap: wrap; }
   section { padding: 64px 20px; }
   #contact { padding: 64px 20px; }
@@ -634,8 +752,11 @@ footer p {
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://www.linkedin.com/in/shivam-pandey-1450091b4/" target="_blank" style="color:var(--accent);">LinkedIn ↗</a></li>
   </ul>
 </nav>
+
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- HERO -->
 <div id="hero">
@@ -649,32 +770,41 @@ footer p {
       <p class="hero-desc">
         <strong>Backend Engineer</strong> at TCS — building production-grade microservices, 
         event-driven systems, and cloud infrastructure with Java &amp; Spring Boot.
-        Targeting fintech &amp; product companies in the 14–18 LPA range.
+        Passionate about clean architecture, performance, and shipping things that scale.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary">Get in touch ↗</a>
         <a href="#projects" class="btn-outline">View projects</a>
       </div>
     </div>
-    <div class="hero-code">
-<span class="code-comment">// shivam.config.ts</span>
-<br><br>
-<span class="code-key">const</span> engineer = <span class="code-bracket">{</span>
-<br>&nbsp;&nbsp;<span class="code-key">name</span>: <span class="code-str">"Shivam Pandey"</span>,
-<br>&nbsp;&nbsp;<span class="code-key">role</span>: <span class="code-str">"Backend Engineer"</span>,
-<br>&nbsp;&nbsp;<span class="code-key">location</span>: <span class="code-str">"Thane, Maharashtra"</span>,
-<br>&nbsp;&nbsp;<span class="code-key">stack</span>: <span class="code-bracket">[</span>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"Java 17"</span>, <span class="code-str">"Spring Boot 3.2"</span>,
-<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"Apache Kafka"</span>, <span class="code-str">"gRPC"</span>,
-<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"AWS ECS"</span>, <span class="code-str">"Docker"</span>
-<br>&nbsp;&nbsp;<span class="code-bracket">]</span>,
-<br>&nbsp;&nbsp;<span class="code-key">impact</span>: <span class="code-bracket">{</span>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">apiResponseTime</span>: <span class="code-str">"-30%"</span>,
-<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">queryLatency</span>: <span class="code-str">"-40%"</span>,
-<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">uptime</span>: <span class="code-num">99.9</span>
-<br>&nbsp;&nbsp;<span class="code-bracket">}</span>
-<br><span class="code-bracket">}</span>
+    <div class="hero-right">
+      <div class="hero-badge-grid">
+        <div class="hbadge hbadge--lg">Java</div>
+        <div class="hbadge">Spring Boot</div>
+        <div class="hbadge">Microservices</div>
+        <div class="hbadge hbadge--accent">Apache Kafka</div>
+        <div class="hbadge">gRPC</div>
+        <div class="hbadge hbadge--lg">AWS</div>
+        <div class="hbadge">Docker</div>
+        <div class="hbadge hbadge--accent">PostgreSQL</div>
+        <div class="hbadge">REST APIs</div>
+        <div class="hbadge">Spring Security</div>
+        <div class="hbadge hbadge--lg">JWT</div>
+        <div class="hbadge">CloudFormation</div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-strip reveal">
+  <div class="about-label">About me</div>
+  <div class="about-text">
+    I'm a <strong>Backend Engineer</strong> based in Thane, Maharashtra, currently at TCS. 
+    I specialize in <strong>Java &amp; Spring Boot microservices</strong>, event-driven systems with Kafka, 
+    and cloud infrastructure on AWS. I care deeply about <strong>performance, clean architecture, 
+    and building systems that handle real scale</strong>. When I'm not shipping backend features, 
+    I'm building side projects that push my understanding of distributed systems.
   </div>
 </div>
 
@@ -752,7 +882,13 @@ footer p {
     <a href="https://github.com/Alphaczz/Patient-Management" target="_blank" class="project-card reveal">
       <div class="proj-num">01</div>
       <div class="proj-name">Healthcare Microservices Platform</div>
-      <div class="proj-desc">5 decoupled microservices — Patient, Billing, Analytics, Auth, and API Gateway — communicating via Kafka and gRPC, deployed on AWS ECS.</div>
+      <div class="proj-desc">5 decoupled microservices — Patient, Billing, Analytics, Auth, and API Gateway — deployed on AWS ECS.</div>
+      <ul class="proj-bullets">
+        <li>Async event-driven communication via Apache Kafka</li>
+        <li>High-throughput inter-service calls using gRPC</li>
+        <li>JWT + Spring Security for role-based access control</li>
+        <li>Infrastructure-as-Code with AWS CloudFormation</li>
+      </ul>
       <div class="proj-tags">
         <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">gRPC</span><span class="tag">AWS ECS</span><span class="tag">Docker</span><span class="tag">CloudFormation</span>
       </div>
@@ -762,7 +898,13 @@ footer p {
     <a href="https://github.com/Alphaczz/AI-Code-Review" target="_blank" class="project-card reveal">
       <div class="proj-num">02</div>
       <div class="proj-name">AI-Powered Code Review Tool</div>
-      <div class="proj-desc">Real-time collaborative code review backend powered by Google Gemini API — live sessions via WebSocket/STOMP, secured with GitHub OAuth2.</div>
+      <div class="proj-desc">Real-time collaborative code review backend powered by Google Gemini API with live sessions and secure auth.</div>
+      <ul class="proj-bullets">
+        <li>Gemini API integration for automated code quality analysis</li>
+        <li>Live multi-developer sessions via WebSocket/STOMP</li>
+        <li>GitHub OAuth2 SSO + global exception handling</li>
+        <li>Swagger/OpenAPI docs + Spring Mail notifications</li>
+      </ul>
       <div class="proj-tags">
         <span class="tag">Java 17</span><span class="tag">Spring Boot 3.2</span><span class="tag">Gemini API</span><span class="tag">WebSocket</span><span class="tag">OAuth2</span><span class="tag">MySQL</span>
       </div>
@@ -822,7 +964,7 @@ footer p {
   <div class="contact-inner">
     <div class="reveal">
       <div class="contact-big">Let's<br><span>work</span><br>together.</div>
-      <p class="contact-sub">Open to backend engineering roles at product &amp; fintech companies. 14–18 LPA range.</p>
+      <p class="contact-sub">Open to backend engineering roles at product &amp; fintech companies. Let's build something great together.</p>
       <a href="mailto:shivam212002@gmail.com" class="btn-primary" style="display:inline-flex;">Send an email ↗</a>
     </div>
     <div class="contact-links reveal">
@@ -838,7 +980,7 @@ footer p {
         <span class="contact-link-icon">✆</span>
         +91-8879074932
       </a>
-      <a href="#" class="contact-link">
+      <a href="https://www.linkedin.com/in/shivam-pandey-1450091b4/" target="_blank" class="contact-link">
         <span class="contact-link-icon">in</span>
         linkedin.com/in/shivam-pandey
       </a>
@@ -857,6 +999,13 @@ footer p {
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Cursor glow
+const glow = document.getElementById('cursorGlow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top  = e.clientY + 'px';
 });
 
 // Scroll reveal
